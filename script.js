@@ -22,8 +22,7 @@ function createCells(boardSize) {
 function deleteChildNodes(parent) {
 while (parent.hasChildNodes()) {
     parent.removeChild(parent.lastChild);
-}
-}
+}}
 
 
 function displayBoardSize(boardSize) {
@@ -32,17 +31,36 @@ function displayBoardSize(boardSize) {
 }
 
 
-let slider = document.querySelector('.size-slider');
-slider.addEventListener('change', () => {
+let sizeSlider = document.querySelector('.size-slider');
+sizeSlider.addEventListener('change', () => {
     setGridDims(slider.value);
     createCells(slider.value);
     setBackgroundListener(lastColor);
     
 })
 
-const defaultColor = document.querySelector('#black');
-defaultColor.addEventListener('click', () => {
+const defaultColorBtn = document.querySelector('#default-color');
+defaultColorBtn.addEventListener('click', () => {
     setBackgroundListener()
+})
+
+
+const rainbowBtn = document.querySelector('#rainbow');
+rainbowBtn.addEventListener('click', () => {
+    setBackgroundListener('rainbow');
+})
+
+
+const colorInput = document.querySelector('#input-color');
+colorInput.addEventListener('change', () => {
+    let color = colorInput.value;
+    setBackgroundListener(color);
+})
+
+
+const eraserBtn = document.querySelector('#eraser');
+eraserBtn.addEventListener('click', () => {
+  setBackgroundListener('white');
 })
 
 
@@ -55,28 +73,6 @@ function clearBoard() {
       cell.style.backgroundColor = 'white';
   }
 } 
-
-
-const rainbow = document.querySelector('#rainbow');
-rainbow.addEventListener('click', () => {
-    setBackgroundListener('rainbow');
-}
-)
-
-
-const colorInput = document.querySelector('#input-color');
-colorInput.addEventListener('change', () => {
-    let color = colorInput.value;
-    setBackgroundListener(color);
-} 
-)
-
-
-const eraserBtn = document.querySelector('#eraser');
-eraserBtn.addEventListener('click', () => {
-  setBackgroundListener('white');
-}
-)
 
 
 function setBackgroundListener(color='black') {
