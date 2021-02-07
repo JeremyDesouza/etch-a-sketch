@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Etch-A-Sketch</title>
+  <meta charset="UTF-8"/>
+  <link rel='stylesheet' href='styles.css'>
+</head>
+<body>
+
+  <div class='container'>
+    
+    <div id='grid-wrapper'>
+      
+      <h1>Etch-A-Sketch</h1>
+      <div class='grid'></div>
+      
+    </div>  
+    
+    <div class='grid-options'>
+     
+      <p class='board-size'></p>
+      <input type="range" min='5' max='100' value='8' class='size-slider'>
+      
+      <button type='button' class='option-btn' id='black'>Black</button>
+      <button type='button' class='option-btn' id='rainbow'>Rainbow</button>
+      <button type='button' class='option-btn' id="color-picker"> <input type="color" value="#000000" id="input-color"></button>
+      <button type='button' class='option-btn' id='eraser'>Eraser</button>
+      <button type='button' class='option-btn' id='clear-btn'>Clear</button>
+    
+    </div>
+  
+  </div>
+  
+  <script src="script.js"></script>
+      
+  
+  </script>
+</body>
+</html>
